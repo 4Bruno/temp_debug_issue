@@ -12,7 +12,7 @@ log_(const char *format, ...)
   va_list args;
   va_start(args, format);
 
-#if 1
+#if 0
   vprintf(format, args);
 #else
   int bytes_written = fprintf(log_file,format, args);
@@ -34,6 +34,8 @@ main()
   Assert(log_file != NULL);
 
   log("path is %s", log_file_name);
+  int i = 12345;
+  log("this is an int %i?", i);
 
   fclose(log_file);
 }
